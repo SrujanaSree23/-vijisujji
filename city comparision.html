@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Pollution Comparison Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f3a389fe;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        th {
+            background-color: #0e0502f8;
+            color: white;
+            border-radius: 10px;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .high-pollution {
+            background-color: #ee1511c1; /* Light red for high pollution */
+        }
+        .low-pollution {
+            background-color: #85fca0; /* Light green for low pollution */
+        }
+    </style>
+</head>
+<body>
+
+<h1>City comparision based on their air quality</h1>
+<p>This table compares cities with high and low air pollution based on PM2.5 levels.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Average PM2.5 (µg/m³)</th>
+            <th>Pollution Level</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="high-pollution">
+            <td>Delhi</td>
+            <td>126</td>
+            <td>High Pollution</td>
+        </tr>
+        <tr class="high-pollution">
+            <td>Ghaziabad</td>
+            <td>112</td>
+            <td>High Pollution</td>
+        </tr>
+        <tr class="high-pollution">
+            <td>Faridabad</td>
+            <td>109</td>
+            <td>High Pollution</td>
+        </tr>
+        <tr class="low-pollution">
+            <td>Bangalore</td>
+            <td>35</td>
+            <td>Low Pollution</td>
+        </tr>
+        <tr class="low-pollution">
+            <td>Pune</td>
+            <td>40</td>
+            <td>Low Pollution</td>
+        </tr>
+        <tr class="low-pollution">
+            <td>Chennai</td>
+            <td>42</td>
+            <td>Low Pollution</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+   

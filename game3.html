@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Check-In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        .streak {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff9800;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .streak .fire-icon {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Streak Tracker Section -->
+        <div class="streak">
+            <span class="fire-icon">🔥</span>
+            <span>Current Streak: 5 days</span>
+        </div>
+
+        <h2>Daily Check-In</h2>
+       
+            <label for="observation">Your observation on air quality index today:</label>
+            <select id="observation" name="observation" required>
+                <option value="good">Good</option>
+                <option value="moderate">Moderate</option>
+                <option value="unhealthy">Unhealthy</option>
+                <option value="hazardous">Hazardous</option>
+            </select>
+
+            <label for="oxylevel">Oxygen level concentration:</label>
+            <select id="oxylevel" name="oxylevel" required>
+                <option value="minimum">Minimum</option>
+                <option value="medium">Medium</option>
+                <option value="maximum">Maximum</option>
+                
+            </select>
+
+            <label for="step">Did you take any step towards this stigma today?</label>
+            <select id="step" name="step" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="comments">What is it?:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+
+            <button onclick="window.location.href='game.html';">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Example JavaScript to simulate streak count display
+        document.getElementById("streak-count").textContent = localStorage.getItem("streak") || "1";
+        
+        // This example assumes your backend updates streak based on actual check-in data.
+    </script>
+</body>
+</html>

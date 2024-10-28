@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Impurity Monitoring</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Air Impurity Monitoring</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([26.5236, 85.6750], 12); // Set initial view to a specific location
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Function to add air impurity data layer
+        function addAirImpurityLayer(data) {
+            // Assuming data is in GeoJSON format
+            L.geoJSON(data, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup('Air Impurity: ' + feature.properties.impurity + '%'); // Example property
+                }
+            }).addTo(map);
+        }
+
+        // Fetch air impurity data from the backend
+        fetch('/api/air-impurity')
+            .then(response => response.json())
+            .then(data => {
+                addAirImpurityLayer(data);
+            })
+            .catch(error => console.error('Error fetching air impurity data:', error));
+    </script>
+
+</body>
+</html>
